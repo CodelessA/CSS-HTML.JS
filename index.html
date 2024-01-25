@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--FONTS HERE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Salsa&family=Teko&display=swap"
+      rel="stylesheet"
+    />
+    <!--FONTS HERE (end)-->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Easy calculator</title>
+  </head>
+  <body>
+    <!--------NAVIGATION SECTION-------->
+    <header>
+      <nav>
+        <h1 class="animated">Work in progress! Started - 28.11.2023</h1>
+        <p>early version 2.0</p>
+
+        <div id="fast-navigation">
+          <label for="#fast-nav">Fast navigation</label>
+          <select
+            name="fast-nav"
+            id="fast-nav"
+            onchange="navigateToSection(this)"
+          >
+            <option value="#hello-section" selected>Top</option>
+            <option value="#addition">Addition/Subtraction</option>
+            <option value="#exponentiation">Exponentiation</option>
+            <option value="#interest-cl">Interest calculator</option>
+            <option value="#sqrt">Square root</option>
+            <option value="#strong">Factorial of number</option>
+            <option value="#footer">Footer/about</option>
+          </select>
+        </div>
+      </nav>
+    </header>
+    <a href="#hello-section" class="to-top">Back to top</a>
+    <!--------NAVIGATION SECTION-------->
+
+    <main>
+      <!------------HELLO SECTION-------------->
+      <section id="hello-section">
+        <h1>Welcome</h1>
+        <p>This is Easy calculator app</p>
+      </section>
+      <!------------HELLO SECTION-------------->
+      <hr />
+      <!--------HERE ARE STARTING CALCULATORS-------->
+      <article>
+        <!-------ADDITION START------->
+        <section id="addition">
+          <h2>
+            <span class="addNum">Addition</span>
+          </h2>
+
+          <form class="add-form">
+            <p class="label-input" >
+              <label id="numbers-label" for="number1">Numbers</label>
+              <input  class="add-input" inputmode="numeric" id="number1" />
+            
+              <label for="number2"><span class="plus">+</span></label>
+              <input  class="add-input" inputmode="numeric" id="number2" />
+            </p>
+            <p class="p-add" id="sum">
+              =&nbsp;<span id="total-sum">0</span>
+            </p>
+            <button class="add-button" onclick="count()" type="button">
+              Calculate
+            </button>
+          </form>
+        </section>
+        <!--ADDITION END--------------------->
+
+        <!--SUBTRACTION START---------------------->
+        <section id="subtraction">
+          <h2>
+            <span class="minNum">Subtraction</span>
+          </h2>
+          <div class="calc-container">
+            <label id="numbers-label" for="number1M">Numbers</label>
+            <input  class="min-input" inputmode="numeric" id="number1M" />
+
+            <label for="number2M"><span class="minus">-</span></label>
+            <input class="min-input" inputmode="numeric" id="number2M" />
+
+            <p class="p-min" id="min">=&nbsp;<span id="total-min">0</span></p>
+          </div>
+            <button class="min-button" onclick="countM()" type="button">
+              Calculate
+            </button>
+
+        </section>
+        <!--SUBTRACTION END---------------------->
+
+        <!--EXPONENTIATION START---------------------->
+        <section id="exponentiation">
+          <h2 class="pow">Exponentiation</h2>
+
+          <label class="pow-info">Enter the number you want to raise to a power</label>
+          <input inputmode="numeric" id="num-pow" />
+
+          <p class="pow-info-num">
+            <label>Enter power</label>
+            <input inputmode="numeric" id="pow-num" />
+          </p>
+
+          <button class="pow-button" onclick="countPow()" type="button">
+            Calculate
+          </button>
+
+          <p class="pow-res" id="pow-sum">
+            <span id="a-pow">a</span> raised to power
+            <span id="n-pow">n</span> is equal to:
+            <span id="total-pow">&nbsp;a^n</span>
+          </p>
+        
+        </section>
+        <!--EXPONENTIATION END---------------------->
+
+        <!--INTEREST CALCULATOR START-->
+        <section id="interest-cl">
+          <h2 class="interest">Interest calculator</h2>
+
+          <form class="intform">
+            <label for="principal">Kwota całkowita</label>
+            <input class="int-input" type="number" id="principal" />
+
+            <label for="rate">Oprocentowanie (%)</label>
+            <input class="int-input" type="number" id="rate" />
+
+            <label for="years">Liczba lat</label>
+            <input class="int-input" type="number" id="years" />
+
+            <button class="int-button" onclick="calculate()" type="button">
+              Oblicz</button
+            ><br />
+            <br />
+            <p id="total">
+              Kwota całkowita: <span id="total-amount">&nbsp;0.00 zł</span>
+            </p>
+          </form>
+        </section>
+        <!--INTEREST CALCULATOR END-->
+
+        <!--SQUARE ROOT START---------------------->
+       <section id="sqrt">
+        <h2 class="sqrt-c">Square root</h2>
+         <label class="sqrt-label" for="sqrt-num">Podaj liczbę, z której chcesz wyciągnąć pierwiastek:</label>
+         <input class="sqrt-input" type="number" id="sqrt-num">
+         <button class="sqrt-button" onclick="countSqrt()" type="button">Oblicz</button>
+        
+        <p class="sqrt-res" id="sqrt-sum">
+          <p id="sqrt-info">Pierwiastek kwadratowy z liczby
+            <span id="sqrt-n">x</span>
+            <span>jest równy</span>
+            <span id="sqrt-result">√</span>
+          </p>
+        </p>
+       </section>
+        <!--SQUARE ROOT END---------------------->
+
+        <!--STRONG START---------------------->
+      <section id="strong">
+        <h2 class="strong">Factorial of a number</h2>
+      
+        <label class="strong-info">Podaj liczbę, z której chcesz obliczyć silnię</label>
+        <input type="number" id="strong-num">
+      
+          <button class="strong-button" onclick="countStrong()" type="button">Oblicz</button>
+      
+           <p id="strong-sum">
+           <p id="strong-res">Silnia z liczby <span id="n-strong"> n</span> wynosi <span id="n-strongRes"> n!</span></p>  
+           </p>
+           </p>
+      </section>
+        <!--STRONG END--------------------->
+      </article>
+    </main>
+
+    <footer id="footer">
+      <p>© Made by August A. 2023/2024</p>
+    </footer>
+  </body>
+</html>
