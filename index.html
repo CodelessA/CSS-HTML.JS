@@ -104,7 +104,7 @@
 
         </section>
         <!--SUBTRACTION END---------------------->
-
+           <section class="paddin-G"></section>
         <!--EXPONENTIATION START---------------------->
         <section id="exponentiation">
           <h2 class="pow">Exponentiation</h2>
@@ -135,21 +135,29 @@
           <h2 class="interest">Interest calculator</h2>
 
           <form class="intform">
-            <label for="principal">Kwota całkowita</label>
-            <input class="int-input" type="number" id="principal" />
-
-            <label for="rate">Oprocentowanie (%)</label>
-            <input class="int-input" type="number" id="rate" />
-
-            <label for="years">Liczba lat</label>
-            <input class="int-input" type="number" id="years" />
+            <div class="int-flex">
+            
+            <label class="percent" for="principal">Total amount</label>
+            <input class="int-input" inputmode="numeric" id="principal" />
+            
+            
+            <label class="percent" for="rate">Interest (%)</label>
+            <input class="int-input" inputmode="numeric" id="rate" />
+            
+            
+            <label class="percent" for="years">Number of years</label>
+            <input class="int-input"inputmode="numeric" id="years" />
+            
+            </div>
 
             <button class="int-button" onclick="calculate()" type="button">
-              Oblicz</button
+              Calculate</button
             ><br />
             <br />
             <p id="total">
-              Kwota całkowita: <span id="total-amount">&nbsp;0.00 zł</span>
+              Total amount with interest
+
+: <span id="total-amount">&nbsp;0.00</span>
             </p>
           </form>
         </section>
@@ -158,14 +166,14 @@
         <!--SQUARE ROOT START---------------------->
        <section id="sqrt">
         <h2 class="sqrt-c">Square root</h2>
-         <label class="sqrt-label" for="sqrt-num">Podaj liczbę, z której chcesz wyciągnąć pierwiastek:</label>
-         <input class="sqrt-input" type="number" id="sqrt-num">
-         <button class="sqrt-button" onclick="countSqrt()" type="button">Oblicz</button>
+         <label class="sqrt-label" for="sqrt-num">Enter the number you want to take the square root of:</label>
+         <input class="sqrt-input" inputmode="numeric" id="sqrt-num">
+         <button class="sqrt-button" onclick="countSqrt()" type="button">Calculate</button>
         
         <p class="sqrt-res" id="sqrt-sum">
-          <p id="sqrt-info">Pierwiastek kwadratowy z liczby
+          <p id="sqrt-info">The square root of a number
             <span id="sqrt-n">x</span>
-            <span>jest równy</span>
+            <span>is equal</span>
             <span id="sqrt-result">√</span>
           </p>
         </p>
@@ -176,15 +184,14 @@
       <section id="strong">
         <h2 class="strong">Factorial of a number</h2>
       
-        <label class="strong-info">Podaj liczbę, z której chcesz obliczyć silnię</label>
-        <input type="number" id="strong-num">
+        <label class="strong-info">Enter the number from which you want to calculate the factorial:
+
+</label>
+        <input inputmode="numeric" id="strong-num">
       
-          <button class="strong-button" onclick="countStrong()" type="button">Oblicz</button>
-      
-           <p id="strong-sum">
-           <p id="strong-res">Silnia z liczby <span id="n-strong"> n</span> wynosi <span id="n-strongRes"> n!</span></p>  
-           </p>
-           </p>
+          <button class="strong-button" onclick="countStrong()" type="button">Calculate</button>
+            <p id="strong-res">Factorial of a number<span id="n-strong"> n</span>is equal<span id="n-strongRes"> n!</span></p>
+          
       </section>
         <!--STRONG END--------------------->
       </article>
