@@ -1,3 +1,5 @@
+/* MEDIA RULES ARE AT THE BOTTOM*/
+
 /* Colors for variables */
 :root {
   --general-color: #c2e5e4;
@@ -114,12 +116,6 @@ font-family: 'Teko', sans-serif;
 */
 
 /* Universal selector */
-@media screen and (max-width: 768px) {
-  article,
-  h1 {
-    width: 100%;
-  }
-}
 
 *,
 *::before,
@@ -151,7 +147,9 @@ hr {
 }
 
 body {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
   background: linear-gradient(
     90deg,
     rgba(2, 1, 29, 1) 10%,
@@ -180,6 +178,7 @@ input {
 .paddin-G {
   margin: -9.5%;
 }
+
 /* general selectors */
 
 /* To top arrow */
@@ -195,6 +194,7 @@ input {
   z-index: 20;
   left: 94.5%;
   bottom: 3%;
+  margin-right: 10px;
 }
 .to-top:before {
   content: "▲";
@@ -221,8 +221,8 @@ input {
 
 /* Navbar set */
 nav {
-  width: 100%;
-  height: 10%;
+  min-width: 100%;
+  min-height: 90px;
   position: fixed;
   top: 2%;
   right: 0px;
@@ -248,10 +248,11 @@ nav p {
 }
 
 #fast-navigation {
+  padding: 8px 5px;
   position: fixed;
   font-size: 24px;
-  top: 5.2%;
-  left: 5%;
+  top: 34px;
+  left: 80px;
   color: white;
   font-family: "Salsa", "cursive";
 }
@@ -268,8 +269,8 @@ nav p {
 
 #fast-navigation select {
   color: white;
-  width: 8vw;
-  height: 4vh;
+  min-width: 8vw;
+  min-height: 4vh;
   text-align: center;
   border: none;
   /*animation: border-pulse 10s 1s infinite linear forwards; */
@@ -293,6 +294,7 @@ nav p {
 #hello-section {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -335,6 +337,8 @@ nav p {
 
 /* Addition section */
 #addition {
+  display: flex;
+  flex-direction: column;
   position: relative;
   margin: 50px auto;
   border: 2px solid purple;
@@ -342,6 +346,7 @@ nav p {
   box-shadow: 2px 2px 5px black;
   padding: 20px 20px;
   width: 90%;
+  overflow: visible;
   height: var(--height-section);
   background: linear-gradient(
     90deg,
@@ -399,7 +404,7 @@ h2 .addNum {
   display: inline;
   position: relative;
   top: -50px;
-  left: 14.5%;
+  right: -240px;
 }
 
 .add-button {
@@ -435,16 +440,26 @@ h2 .addNum {
 
 /*subtraction section */
 #subtraction {
-  position: relative;
   display: flex;
   flex-direction: column;
-  left: 1100px;
+  position: relative;
+  margin: 50px auto;
+  border: 2px solid purple;
+  animation: border-pulse 10s 1s infinite linear forwards;
+  box-shadow: 2px 2px 5px black;
+  padding: 20px 20px;
+  width: 90%;
+  overflow: visible;
   height: var(--height-section);
-  top: -255px;
-  /*It have the same background like addition*/
+  background: linear-gradient(
+    90deg,
+    var(--section-color),
+    var(--section-color2),
+    var(--section-color)
+  );
 
   .min-button {
-    position: absolute;
+    position: relative;
     bottom: 0px;
     left: 0px;
     padding: 5px 5px;
@@ -725,7 +740,8 @@ h2 .addNum {
   position: relative;
   font-size: 20px;
   top: 16px;
-  left: 6%;
+  left: 100px;
+  padding: 2px 5px;
   color: whitesmoke;
 }
 
@@ -857,7 +873,7 @@ h2 .addNum {
 #sqrt-info {
   position: relative;
   top: 16px;
-  left: 6%;
+  left: 100px;
   font-size: 20px;
   color: whitesmoke;
 }
@@ -897,6 +913,7 @@ h2 .addNum {
 
 .strong-info {
   font-size: 20px;
+  margin-bottom: 5px;
   color: whitesmoke;
 }
 
@@ -956,14 +973,13 @@ h2 .addNum {
 #strong-res {
   position: relative;
   top: 16px;
-  left: 6%;
+  left: 100px;
   font-size: 20px;
   color: whitesmoke;
 }
 
 #n-strong {
-  margin-left: 0.1%;
-  margin-right: 0.4%;
+  margin-right: 1%;
   font-size: 150%;
   color: var(--numbers-color);
 }
@@ -1005,13 +1021,14 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 5%;
+  min-width: 40px;
+  min-height: 100px;
   background-image: radial-gradient(
     ellipse 50% 35% at 50% 50%,
     #ac0346,
     transparent
   );
+  padding: 10px 10px;
   transform: translate(-50%, -50%);
   letter-spacing: 1;
   left: 50%;
@@ -1056,5 +1073,45 @@ footer p {
   }
   100% {
     text-shadow: #f8ab53;
+  }
+}
+
+/* MEDIA RULES */
+@media screen and (max-width: 600px) {
+  .article,
+  #addition,
+  #subtraction,
+  #exponentiation,
+  #interest-cl,
+  #sqrt,
+  #strong {
+    min-width: 100%;
+    min-height: 50%;
+    overflow-wrap: break-word;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .article,
+  #addition,
+  #subtraction,
+  #exponentiation,
+  #interest-cl,
+  #sqrt,
+  #strong {
+    width: 100%;
+    display: grid;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .to-top {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .animated {
+    display: none;
   }
 }
