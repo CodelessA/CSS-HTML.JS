@@ -1,205 +1,605 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--FONTS HERE-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Salsa&family=Teko&display=swap"
-      rel="stylesheet"
-    />
-    <!--FONTS HERE (end)-->
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <title>Easy calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profesjonalny kalkulator matematyczny z nowoczesnym interfejsem">
+  
+  <!-- Modern fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Professional Calculator</title>
   </head>
   <body>
-    <!--------NAVIGATION SECTION-------->
-    <header>
-      <nav>
-        <h1 class="animated">Work in progress! Started - 28.11.2023</h1>
-        <p>early version 2.0</p>
-
-        <div id="fast-navigation">
-          <label for="#fast-nav">Fast navigation</label>
-          <select
-            name="fast-nav"
-            id="fast-nav"
-            onchange="navigateToSection(this)"
-          >
-            <option value="#hello-section" selected>Top</option>
-            <option value="#addition">Addition</option>
-            <option value="#subtraction">Subtraction</option>
-            <option value="#exponentiation">Exponentiation</option>
-            <option value="#interest-cl">Interest calculator</option>
-            <option value="#sqrt">Square root</option>
-            <option value="#strong">Factorial of number</option>
-            <option value="#footer">Footer/about</option>
-          </select>
+  <!-- Navigation -->
+  <header class="header">
+    <nav class="nav">
+      <div class="nav__brand">
+        <h1 class="nav__title">Calculator Pro</h1>
+        <p class="nav__subtitle">Professional Mathematical Tools</p>
+      </div>
+      
+      <div class="nav__controls">
+        <label for="nav-select" class="nav__label">Navigate</label>
+        <select id="nav-select" class="nav__select" onchange="navigateToSection(this)">
+          <option value="#hero">Home</option>
+          <option value="#basic-operations">Basic Operations</option>
+          <option value="#advanced-operations">Advanced Operations</option>
+          <option value="#trigonometry">Trigonometry</option>
+          <option value="#financial">Financial</option>
+          <option value="#statistics">Statistics</option>
+          <option value="#advanced-math">Advanced Math</option>
+          <option value="#conversions">Unit Conversions</option>
+        </select>
         </div>
       </nav>
     </header>
-    <a href="#hello-section" class="to-top">Back to top</a>
-    <!--------NAVIGATION SECTION-------->
 
-    <main>
-      <!------------HELLO SECTION-------------->
-      <section id="hello-section">
-        <h1>Welcome</h1>
-        <p>This is Easy calculator app</p>
+  <!-- Hero Section -->
+  <main class="main">
+    <section id="hero" class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Professional Calculator</h1>
+        <p class="hero__subtitle">Advanced mathematical operations with modern interface</p>
+        <div class="hero__features">
+          <span class="feature-tag">Basic Operations</span>
+          <span class="feature-tag">Advanced Math</span>
+          <span class="feature-tag">Trigonometry</span>
+          <span class="feature-tag">Financial</span>
+        </div>
+      </div>
       </section>
-      <!------------HELLO SECTION-------------->
-      <hr />
-      <!--------HERE ARE STARTING CALCULATORS-------->
-      <article>
-        <!-------ADDITION START------->
-        <section id="addition">
-          <h2>
-            <span class="addNum">Addition</span>
-          </h2>
 
-          <form class="add-form">
-            <p class="label-input" >
-              <label id="numbers-label" for="number1">Numbers</label>
-              <input  class="add-input" inputmode="numeric" id="number1" />
-            
-              <label for="number2"><span class="plus">+</span></label>
-              <input  class="add-input" inputmode="numeric" id="number2" />
-            </p>
-            <p class="p-add" id="sum">
-              =&nbsp;<span id="total-sum">0</span>
-            </p>
-            <button class="add-button" onclick="count()" type="button">
-              Calculate
-            </button>
-          </form>
-        </section>
-        <!--ADDITION END--------------------->
-
-        <!--SUBTRACTION START---------------------->
-        <section id="subtraction">
-          <h2>
-            <span class="minNum">Subtraction</span>
-          </h2>
-          <div class="calc-container">
-            <label id="numbers-label" for="number1M">Numbers</label>
-            <input  class="min-input" inputmode="numeric" id="number1M" />
-
-            <label for="number2M"><span class="minus">-</span></label>
-            <input class="min-input" inputmode="numeric" id="number2M" />
-
-            <p class="p-min" id="min">=&nbsp;<span id="total-min">0</span></p>
+    <!-- Basic Operations -->
+    <section id="basic-operations" class="section">
+      <div class="container">
+        <h2 class="section__title">Basic Operations</h2>
+        <div class="calculators-grid">
+          
+          <!-- Addition -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Addition
+              <button type="button" class="help-btn" data-tooltip="Enter the first and second number, then press Calculate to add them together.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="number1" class="input-label">First number</label>
+                <input type="number" id="number1" class="input" placeholder="Enter number">
+              </div>
+              <div class="operator">+</div>
+              <div class="input-group">
+                <label for="number2" class="input-label">Second number</label>
+                <input type="number" id="number2" class="input" placeholder="Enter number">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateAddition()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="total-sum" class="result__value">0</span>
+              </div>
+            </form>
           </div>
-            <button class="min-button" onclick="countM()" type="button">
-              Calculate
-            </button>
 
+          <!-- Subtraction -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Subtraction
+              <button type="button" class="help-btn" data-tooltip="Enter the first and second number, then press Calculate to subtract the second from the first.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="number1M" class="input-label">First number</label>
+                <input type="number" id="number1M" class="input" placeholder="Enter number">
+              </div>
+              <div class="operator">-</div>
+              <div class="input-group">
+                <label for="number2M" class="input-label">Second number</label>
+                <input type="number" id="number2M" class="input" placeholder="Enter number">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateSubtraction()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="total-min" class="result__value">0</span>
+              </div>
+          </form>
+          </div>
+
+          <!-- Multiplication -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Multiplication
+              <button type="button" class="help-btn" data-tooltip="Enter the first and second number, then press Calculate to multiply them.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="mult-num1" class="input-label">First number</label>
+                <input type="number" id="mult-num1" class="input" placeholder="Enter number">
+              </div>
+              <div class="operator">×</div>
+              <div class="input-group">
+                <label for="mult-num2" class="input-label">Second number</label>
+                <input type="number" id="mult-num2" class="input" placeholder="Enter number">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateMultiplication()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="mult-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Division -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Division
+              <button type="button" class="help-btn" data-tooltip="Enter the dividend and divisor, then press Calculate to divide them. Division by zero is not allowed.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="div-num1" class="input-label">Dividend</label>
+                <input type="number" id="div-num1" class="input" placeholder="Enter dividend">
+              </div>
+              <div class="operator">÷</div>
+              <div class="input-group">
+                <label for="div-num2" class="input-label">Divisor</label>
+                <input type="number" id="div-num2" class="input" placeholder="Enter divisor">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateDivision()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="div-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Percentage -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Percentage
+              <button type="button" class="help-btn" data-tooltip="Enter a value and percentage, then press Calculate to find the percentage of the value.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="percent-value" class="input-label">Value</label>
+                <input type="number" id="percent-value" class="input" placeholder="Enter value">
+              </div>
+              <div class="operator">%</div>
+              <div class="input-group">
+                <label for="percent-rate" class="input-label">Percentage</label>
+                <input type="number" id="percent-rate" class="input" placeholder="Enter %">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculatePercentage()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="percent-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
         </section>
-        <!--SUBTRACTION END---------------------->
-        
-        <!--EXPONENTIATION START---------------------->
-        <section id="exponentiation">
-          <h2 class="pow">Exponentiation</h2>
 
-          <label class="pow-info">Enter the number you want to raise to a power</label>
-          <input inputmode="numeric" id="num-pow" />
+    <!-- Advanced Operations -->
+    <section id="advanced-operations" class="section">
+      <div class="container">
+        <h2 class="section__title">Advanced Operations</h2>
+        <div class="calculators-grid">
+          
+          <!-- Exponentiation -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Exponentiation
+              <button type="button" class="help-btn" data-tooltip="Enter the base and exponent, then press Calculate to raise the base to the power of the exponent.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="num-pow" class="input-label">Base</label>
+                <input type="number" id="num-pow" class="input" placeholder="Enter base">
+              </div>
+              <div class="operator">^</div>
+              <div class="input-group">
+                <label for="pow-num" class="input-label">Exponent</label>
+                <input type="number" id="pow-num" class="input" placeholder="Enter exponent">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculatePower()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="total-pow" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
 
-          <p class="pow-info-num">
-            <label>Enter power</label>
-            <input inputmode="numeric" id="pow-num" />
-          </p>
+          <!-- Square Root -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Square Root
+              <button type="button" class="help-btn" data-tooltip="Enter a positive number, then press Calculate to find its square root.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="sqrt-num" class="input-label">Number</label>
+                <input type="number" id="sqrt-num" class="input" placeholder="Enter number" min="0">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateSquareRoot()">Calculate</button>
+              <div class="result">
+                <span class="result__label">√<span id="sqrt-n">x</span> =</span>
+                <span id="sqrt-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
 
-          <button class="pow-button" onclick="countPow()" type="button">
-            Calculate
-          </button>
+          <!-- Factorial -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Factorial
+              <button type="button" class="help-btn" data-tooltip="Enter a non-negative integer (0-170), then press Calculate to find its factorial (n!).">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="strong-num" class="input-label">Number</label>
+                <input type="number" id="strong-num" class="input" placeholder="Enter number" min="0" max="170">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateFactorial()">Calculate</button>
+              <div class="result">
+                <span class="result__label"><span id="n-strong">n</span>! =</span>
+                <span id="n-strongRes" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
 
-          <p class="pow-res" id="pow-sum">
-            <span id="a-pow">a</span> raised to power
-            <span id="n-pow">n</span> is equal to:
-            <span id="total-pow">&nbsp;a^n</span>
-          </p>
-        
+          <!-- Logarithm -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Logarithm
+              <button type="button" class="help-btn" data-tooltip="Enter a positive value and base, then press Calculate to find the logarithm of the value with the given base.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="log-value" class="input-label">Value</label>
+                <input type="number" id="log-value" class="input" placeholder="Enter value" min="0.001">
+              </div>
+              <div class="operator">log</div>
+              <div class="input-group">
+                <label for="log-base" class="input-label">Base</label>
+                <input type="number" id="log-base" class="input" placeholder="Enter base" min="0.001">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateLogarithm()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Result:</span>
+                <span id="log-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
         </section>
-        <!--EXPONENTIATION END---------------------->
 
-        <!--INTEREST CALCULATOR START-->
-        <section id="interest-cl">
-          <h2 class="interest">Interest calculator</h2>
-
-          <form class="intform">
-            <div class="int-flex">
-            
-            <label class="percent" for="principal">Total amount</label>
-            <input class="int-input" inputmode="numeric" id="principal" />
-            
-            
-            <label class="percent" for="rate">Interest (%)</label>
-            <input class="int-input" inputmode="numeric" id="rate" />
-            
-            
-            <label class="percent" for="years">Number of years</label>
-            <input class="int-input"inputmode="numeric" id="years" />
-            
+    <!-- Trigonometry -->
+    <section id="trigonometry" class="section">
+      <div class="container">
+        <h2 class="section__title">Trigonometry</h2>
+        <div class="calculators-grid">
+          
+          <!-- Sine -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Sine
+              <button type="button" class="help-btn" data-tooltip="Enter an angle in degrees, then press Calculate to find the sine of that angle.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="sin-angle" class="input-label">Angle (degrees)</label>
+                <input type="number" id="sin-angle" class="input" placeholder="Enter angle">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateSine()">Calculate</button>
+              <div class="result">
+                <span class="result__label">sin(<span id="sin-angle-display">0</span>°) =</span>
+                <span id="sin-result" class="result__value">0</span>
+              </div>
+            </form>
             </div>
 
-            <button class="int-button" onclick="calculate()" type="button">
-              Calculate</button
-            ><br />
-            <br />
-            <p id="total">
-              Total amount with interest
+          <!-- Cosine -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Cosine
+              <button type="button" class="help-btn" data-tooltip="Enter an angle in degrees, then press Calculate to find the cosine of that angle.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="cos-angle" class="input-label">Angle (degrees)</label>
+                <input type="number" id="cos-angle" class="input" placeholder="Enter angle">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateCosine()">Calculate</button>
+              <div class="result">
+                <span class="result__label">cos(<span id="cos-angle-display">0</span>°) =</span>
+                <span id="cos-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
 
-: <span id="total-amount">&nbsp;0.00</span>
-            </p>
+          <!-- Tangent -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Tangent
+              <button type="button" class="help-btn" data-tooltip="Enter an angle in degrees, then press Calculate to find the tangent of that angle.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="tan-angle" class="input-label">Angle (degrees)</label>
+                <input type="number" id="tan-angle" class="input" placeholder="Enter angle">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateTangent()">Calculate</button>
+              <div class="result">
+                <span class="result__label">tan(<span id="tan-angle-display">0</span>°) =</span>
+                <span id="tan-result" class="result__value">0</span>
+              </div>
           </form>
-        </section>
-        <!--INTEREST CALCULATOR END-->
+          </div>
 
-        <!--SQUARE ROOT START---------------------->
-       <section id="sqrt">
-        <h2 class="sqrt-c">Square root</h2>
-         <label class="sqrt-label" for="sqrt-num">Enter the number you want to take the square root of:</label>
-         <input class="sqrt-input" inputmode="numeric" id="sqrt-num">
-         <button class="sqrt-button" onclick="countSqrt()" type="button">Calculate</button>
-        
-        <p class="sqrt-res" id="sqrt-sum">
-          <p id="sqrt-info">The square root of a number
-            <span id="sqrt-n">x</span>
-            <span>is equal</span>
-            <span id="sqrt-result">√</span>
-          </p>
-        </p>
+        </div>
+      </div>
        </section>
-        <!--SQUARE ROOT END---------------------->
 
-        <!--STRONG START---------------------->
-      <section id="strong">
-        <h2 class="strong">Factorial of a number</h2>
-      
-        <label class="strong-info">Enter the number from which you want to calculate the factorial:
-
-</label>
-        <input inputmode="numeric" id="strong-num">
-      
-          <button class="strong-button" onclick="countStrong()" type="button">Calculate</button>
-            <p id="strong-res">Factorial of a number<span id="n-strong"> n</span>is equal<span id="n-strongRes"> n!</span></p>
+    <!-- Financial -->
+    <section id="financial" class="section">
+      <div class="container">
+        <h2 class="section__title">Financial Calculator</h2>
+        <div class="calculators-grid">
           
+          <!-- Compound Interest -->
+          <div class="calculator-card calculator-card--wide">
+            <h3 class="calculator__title">
+              Compound Interest
+              <button type="button" class="help-btn" data-tooltip="Enter the principal amount, interest rate (%), and number of years, then press Calculate to find the total amount with compound interest.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="principal" class="input-label">Principal Amount</label>
+                  <input type="number" id="principal" class="input" placeholder="Enter amount" min="0">
+                </div>
+                <div class="input-group">
+                  <label for="rate" class="input-label">Interest Rate (%)</label>
+                  <input type="number" id="rate" class="input" placeholder="Enter rate" min="0" max="100">
+                </div>
+                <div class="input-group">
+                  <label for="years" class="input-label">Years</label>
+                  <input type="number" id="years" class="input" placeholder="Enter years" min="0" max="100">
+                </div>
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateInterest()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Total Amount:</span>
+                <span id="total-amount" class="result__value">0.00 PLN</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Mortgage Calculator -->
+          <div class="calculator-card calculator-card--wide">
+            <h3 class="calculator__title">
+              Mortgage Calculator
+              <button type="button" class="help-btn" data-tooltip="Enter the loan amount, annual interest rate (%), and loan term in years to calculate monthly mortgage payment.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="form-row">
+                <div class="input-group">
+                  <label for="mortgage-principal" class="input-label">Loan Amount</label>
+                  <input type="number" id="mortgage-principal" class="input" placeholder="Enter loan amount" min="0">
+                </div>
+                <div class="input-group">
+                  <label for="mortgage-rate" class="input-label">Annual Rate (%)</label>
+                  <input type="number" id="mortgage-rate" class="input" placeholder="Enter rate" min="0" max="50">
+                </div>
+                <div class="input-group">
+                  <label for="mortgage-years" class="input-label">Loan Term (years)</label>
+                  <input type="number" id="mortgage-years" class="input" placeholder="Enter years" min="1" max="50">
+                </div>
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateMortgage()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Monthly Payment:</span>
+                <span id="mortgage-result" class="result__value">0.00 PLN</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- IRR Calculator -->
+          <div class="calculator-card calculator-card--wide">
+            <h3 class="calculator__title">
+              Internal Rate of Return (IRR)
+              <button type="button" class="help-btn" data-tooltip="Enter cash flows separated by commas (e.g., -1000, 300, 400, 500) to calculate the internal rate of return as a percentage.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="irr-flows" class="input-label">Cash Flows (comma separated)</label>
+                <input type="text" id="irr-flows" class="input" placeholder="e.g., -1000, 300, 400, 500">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateIRR()">Calculate</button>
+              <div class="result">
+                <span class="result__label">IRR:</span>
+                <span id="irr-result" class="result__value">0.00%</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section id="statistics" class="section">
+      <div class="container">
+        <h2 class="section__title">Statistics</h2>
+        <div class="calculators-grid">
+          
+          <!-- Average Calculator -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Arithmetic Mean
+              <button type="button" class="help-btn" data-tooltip="Enter numbers separated by commas to calculate their arithmetic mean (average).">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="avg-values" class="input-label">Numbers (comma separated)</label>
+                <input type="text" id="avg-values" class="input" placeholder="e.g., 1, 2, 3, 4, 5">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateAverage()">Calculate</button>
+              <div class="result">
+                <span class="result__label">Average:</span>
+                <span id="avg-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Math -->
+    <section id="advanced-math" class="section">
+      <div class="container">
+        <h2 class="section__title">Advanced Mathematics</h2>
+        <div class="calculators-grid">
+          
+          <!-- Natural Logarithm -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Natural Logarithm (ln)
+              <button type="button" class="help-btn" data-tooltip="Enter a positive number to calculate its natural logarithm (base e).">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="ln-value" class="input-label">Number</label>
+                <input type="number" id="ln-value" class="input" placeholder="Enter number" min="0.001">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="calculateNaturalLog()">Calculate</button>
+              <div class="result">
+                <span class="result__label">ln(<span id="ln-value-display">x</span>) =</span>
+                <span id="ln-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Unit Conversions -->
+    <section id="conversions" class="section">
+      <div class="container">
+        <h2 class="section__title">Unit Conversions</h2>
+        <div class="calculators-grid">
+          
+          <!-- Length Conversions -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Length Conversion
+              <button type="button" class="help-btn" data-tooltip="Convert between meters and feet. Enter a value in one unit to get the equivalent in the other.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="meters-input" class="input-label">Meters</label>
+                <input type="number" id="meters-input" class="input" placeholder="Enter meters" min="0">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="convertMetersToFeet()">Convert to Feet</button>
+              <div class="result">
+                <span class="result__label">Feet:</span>
+                <span id="meters-result" class="result__value">0</span>
+              </div>
+            </form>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="feet-input" class="input-label">Feet</label>
+                <input type="number" id="feet-input" class="input" placeholder="Enter feet" min="0">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="convertFeetToMeters()">Convert to Meters</button>
+              <div class="result">
+                <span class="result__label">Meters:</span>
+                <span id="feet-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Temperature Conversions -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Temperature Conversion
+              <button type="button" class="help-btn" data-tooltip="Convert between Celsius, Fahrenheit, and Kelvin. Enter a value in one unit to get the equivalent in others.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="celsius-input" class="input-label">Celsius</label>
+                <input type="number" id="celsius-input" class="input" placeholder="Enter °C" min="-273.15">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="convertCelsiusToFahrenheit()">Convert to Fahrenheit</button>
+              <div class="result">
+                <span class="result__label">Fahrenheit:</span>
+                <span id="celsius-result" class="result__value">0°F</span>
+              </div>
+            </form>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="fahrenheit-input" class="input-label">Fahrenheit</label>
+                <input type="number" id="fahrenheit-input" class="input" placeholder="Enter °F" min="-459.67">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="convertFahrenheitToCelsius()">Convert to Celsius</button>
+              <div class="result">
+                <span class="result__label">Celsius:</span>
+                <span id="fahrenheit-result" class="result__value">0°C</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Weight Conversions -->
+          <div class="calculator-card">
+            <h3 class="calculator__title">
+              Weight Conversion
+              <button type="button" class="help-btn" data-tooltip="Convert between kilograms and pounds. Enter a value in one unit to get the equivalent in the other.">?</button>
+            </h3>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="kg-input" class="input-label">Kilograms</label>
+                <input type="number" id="kg-input" class="input" placeholder="Enter kg" min="0">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="convertKilogramsToPounds()">Convert to Pounds</button>
+              <div class="result">
+                <span class="result__label">Pounds:</span>
+                <span id="kg-result" class="result__value">0</span>
+              </div>
+            </form>
+            <form class="calculator__form">
+              <div class="input-group">
+                <label for="pounds-input" class="input-label">Pounds</label>
+                <input type="number" id="pounds-input" class="input" placeholder="Enter lbs" min="0">
+              </div>
+              <button type="button" class="btn btn--primary" onclick="convertPoundsToKilograms()">Convert to Kilograms</button>
+              <div class="result">
+                <span class="result__label">Kilograms:</span>
+                <span id="pounds-result" class="result__value">0</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
       </section>
-        <!--STRONG END--------------------->
-      </article>
+
     </main>
 
-    <footer id="footer">
-      <p>© Made by August A. 2023/2024</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">© 2021-2025 Made by August A. • Built with modern web technologies</p>
+    </div>
     </footer>
+
   </body>
 </html>
